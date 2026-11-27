@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Maquette : Brusca Bâtiment et Bois</title>
+<meta name="description" content="Maquette privée d’un site pour Brusca Bâtiment et Bois, non publiée.">
+<style>
+/* Design system : Matière & Équerre (BTP / artisanat). Pierre, bois, zinc, plans d'architecte.
+ * Structure : site d'artisan réel, porté par les photos de l'entreprise (en-tête, grande photo, réassurance, travaux, réalisations, secteur, contact). */
+/*POLICES*/
+@font-face { font-family: "Barlow Condensed"; font-weight: 600; font-display: swap; src: url("../../fonts/barlow-condensed/barlow-condensed-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "Barlow Condensed"; font-weight: 700; font-display: swap; src: url("../../fonts/barlow-condensed/barlow-condensed-latin-700-normal.woff2") format("woff2"); }
+@font-face { font-family: "Barlow"; font-weight: 400; font-display: swap; src: url("../../fonts/barlow/barlow-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Barlow"; font-weight: 500; font-display: swap; src: url("../../fonts/barlow/barlow-latin-500-normal.woff2") format("woff2"); }
+@font-face { font-family: "Barlow"; font-weight: 600; font-display: swap; src: url("../../fonts/barlow/barlow-latin-600-normal.woff2") format("woff2"); }
+/*FIN POLICES*/
+
+:root {
+  --bg-main: #F4F1EA;
+  --bg-alt: #E8E3D8;
+  --text-main: #1C1F1D;
+  --text-muted: #5A5852;
+  --accent-primary: #B84A27;
+  --accent-secondary: #3B5249;
+  --border-color: #D4CEC2;
+  --font-display: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  --font-body: 'Barlow', Arial, sans-serif;
+  --font-mono: var(--font-body);
+
+  --accent-primary-hover: #9E3E20;
+  --on-dark: #F4F1EA;
+  --on-dark-muted: #B9B4A9;
+  --line-dark: #3A3E3B;
+  --banner-bg: #FBEFC0;
+  --banner-ink: #3B2E05;
+  --wrap: 1240px;
+  --gutter: clamp(20px, 4vw, 48px);
+  --r: 2px;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--bg-main); color: var(--text-main); font-family: var(--font-body); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--accent-primary); outline-offset: 3px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.005em; line-height: 0.95; margin: 0; text-wrap: balance; }
+p { margin: 0; }
+html, body, main { overflow-x: clip; }
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
+.mono { font-family: var(--font-body); font-size: 15px; font-weight: 500; letter-spacing: 0; color: var(--text-muted); }
+.vide { display: inline-block; padding: 0 6px; border: 1px dashed var(--border-color); border-radius: var(--r); color: var(--text-muted); font-family: var(--font-body); font-weight: 400; font-size: 0.75em; letter-spacing: 0; text-transform: none; vertical-align: middle; line-height: 1.5; }
+
+.bandeau { position: sticky; top: 0; z-index: 30; background: var(--banner-bg); color: var(--banner-ink); border-bottom: 1px solid #E6CF77; font-size: 14px; line-height: 1.4; padding: 8px var(--gutter); text-align: center; }
+.bandeau a { font-weight: 600; white-space: nowrap; }
+
+/* En-tête */
+.entete { border-bottom: 1px solid var(--border-color); }
+.entete .wrap { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 76px; }
+.marque { display: flex; flex-direction: column; text-decoration: none; min-width: 0; }
+.marque b { font-family: var(--font-display); font-weight: 700; font-size: 24px; letter-spacing: -0.01em; line-height: 1.1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.marque .mono { font-size: 11px; }
+.entete nav { display: flex; align-items: center; gap: 28px; }
+.entete nav a.lien { text-decoration: none; font-weight: 500; font-size: 15px; }
+.entete nav a.lien:hover { color: var(--accent-primary); }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 22px; border-radius: var(--r); font-family: var(--font-body); font-weight: 600; font-size: 16px; text-decoration: none; white-space: nowrap; border: 1px solid transparent; transition: background-color .18s ease, color .18s ease, border-color .18s ease; }
+.btn svg { width: 18px; height: 18px; flex: none; }
+.btn-plein { background: var(--accent-primary); color: #FFFFFF; }
+.btn-plein:hover { background: var(--accent-primary-hover); }
+.btn-ligne { border-color: var(--text-main); color: var(--text-main); }
+.btn-ligne:hover { background: var(--text-main); color: var(--bg-main); }
+.btn:active { transform: translateY(1px); }
+
+/* Hero : texte + grande photo encadrée d'une équerre */
+.hero { padding: 56px 0 72px; }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(32px, 5vw, 72px); align-items: center; }
+.hero .mono { display: block; margin-bottom: 22px; }
+.hero h1 { font-size: clamp(48px, 6.4vw, 100px); }
+.hero .lead { margin-top: 24px; font-size: 19px; color: var(--text-muted); max-width: 30ch; }
+.hero .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+.badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+.badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: var(--r); background: var(--accent-secondary); color: #FFFFFF; font-family: var(--font-mono); font-size: 12px; font-weight: 500; letter-spacing: 0; }
+.badge::before { content: ""; width: 8px; height: 8px; border: 1.5px solid currentColor; border-top: 0; border-right: 0; transform: rotate(-45deg) translateY(-2px); }
+
+.cadre { position: relative; }
+.cadre::before, .cadre::after { content: ""; position: absolute; width: 56px; height: 56px; pointer-events: none; }
+.cadre::before { top: -14px; left: -14px; border-top: 2px solid var(--text-main); border-left: 2px solid var(--text-main); }
+.cadre::after { bottom: -14px; right: -14px; border-bottom: 2px solid var(--text-main); border-right: 2px solid var(--text-main); }
+.hero-img { width: 100%; aspect-ratio: 5 / 4; object-fit: cover; border-radius: var(--r); background: var(--bg-alt); }
+.sans-photo .hero-visuel { aspect-ratio: 5 / 4; border-radius: var(--r); background-color: var(--bg-alt);
+  background-image: linear-gradient(var(--border-color) 1px, transparent 1px), linear-gradient(90deg, var(--border-color) 1px, transparent 1px);
+  background-size: 32px 32px; display: grid; place-items: center; text-align: center; padding: 24px; }
+.a-photo .hero-visuel .pv { display: none; }
+.hero .legende { margin-top: 26px; display: flex; justify-content: space-between; gap: 16px; }
+
+/* Réassurance */
+.lead-src { display: block; margin-top: 10px; color: var(--text-muted); font-size: 12px; }
+.reassurance { background: var(--bg-alt); border-block: 1px solid var(--border-color); }
+.reassurance ul { list-style: none; margin: 0 auto; padding: 0 var(--gutter); max-width: var(--wrap); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.reassurance li { padding: 22px 24px 22px 0; display: flex; flex-direction: column; gap: 2px; }
+.reassurance li + li { padding-left: 24px; border-left: 1px solid var(--border-color); }
+.reassurance strong { font-family: var(--font-display); font-weight: 600; font-size: 20px; letter-spacing: -0.01em; }
+
+/* Travaux */
+.travaux { padding: 104px 0; }
+.travaux .wrap { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(32px, 6vw, 96px); align-items: start; }
+.sans-photo.travaux .wrap { grid-template-columns: minmax(0, 1fr); }
+.entete-section { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; border-bottom: 2px solid var(--text-main); padding-bottom: 18px; margin-bottom: 8px; }
+.entete-section h2 { font-size: clamp(32px, 3.6vw, 52px); }
+.liste { list-style: none; margin: 0; padding: 0; }
+.liste li { display: block; padding: 22px 0; border-bottom: 1px solid var(--border-color); }
+.liste .n { font-family: var(--font-mono); font-size: 13px; color: var(--accent-primary); font-weight: 500; }
+.liste .s { font-family: var(--font-display); font-weight: 600; font-size: clamp(21px, 2vw, 27px); letter-spacing: -0.015em; line-height: 1.2; }
+.svc-img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--r); }
+.travaux .cote { position: sticky; top: 64px; }
+.sans-photo .cote { display: none; }
+
+/* Réalisations */
+.realisations { padding: 0 0 104px; }
+.grille { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-rows: clamp(160px, 21vw, 290px); gap: 16px; margin-top: 28px; }
+.ph { margin: 0; position: relative; }
+.ph { display: flex; flex-direction: column; min-height: 0; }
+.ph img { width: 100%; flex: 1; min-height: 0; object-fit: cover; border-radius: var(--r); }
+.ph:first-child { grid-column: span 2; grid-row: span 2; }
+.ph figcaption { margin-top: 8px; font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); letter-spacing: 0; }
+.ph-vide { border: 1px dashed var(--text-muted); border-radius: var(--r); display: grid; place-items: center; text-align: center; padding: 16px; color: var(--text-muted); font-size: 14px; }
+
+/* Secteur et qualifications */
+.secteur { background: var(--bg-alt); padding: 96px 0; border-top: 1px solid var(--border-color); }
+.secteur .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 96px); }
+.communes { list-style: none; margin: 16px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.communes li { padding: 9px 16px; border: 1px solid var(--text-main); border-radius: 999px; font-weight: 500; background: var(--bg-main); }
+.registre { list-style: none; margin: 16px 0 0; padding: 0; }
+.registre li { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px 16px; padding: 16px 0; border-bottom: 1px solid var(--border-color); }
+.q-nom { font-weight: 600; }
+.q-etat { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0; color: #FFFFFF; background: var(--accent-secondary); padding: 4px 10px; border-radius: var(--r); }
+.q-etat.q-vide { background: transparent; color: var(--text-muted); }
+.note { margin-top: 14px; font-size: 14px; color: var(--text-muted); }
+
+/* Contact */
+.contact { background: var(--text-main); color: var(--on-dark); padding: 104px 0 72px; }
+.contact .wrap { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(32px, 6vw, 96px); align-items: end; }
+.contact h2 { font-size: clamp(32px, 3.6vw, 52px); color: var(--on-dark); }
+.contact .tel { display: inline-block; margin-top: 28px; font-family: var(--font-display); font-weight: 700; font-size: clamp(40px, 6vw, 88px); letter-spacing: -0.03em; line-height: 1; text-decoration: none; font-variant-numeric: tabular-nums; }
+.contact .tel:hover { color: #E7A58E; }
+.contact .actions { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 12px; }
+.contact .btn-ligne { border-color: var(--on-dark); color: var(--on-dark); }
+.contact .btn-ligne:hover { background: var(--on-dark); color: var(--text-main); }
+.contact dl { margin: 0; display: grid; gap: 20px; }
+.contact dt { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0; color: var(--on-dark-muted); }
+.contact dd { margin: 4px 0 0; }
+.contact .vide { color: var(--on-dark-muted); border-color: var(--line-dark); }
+.horaires { list-style: none; margin: 0; padding: 0; }
+.pied { background: var(--text-main); color: var(--on-dark-muted); border-top: 1px solid var(--line-dark); padding: 24px 0 40px; font-size: 13px; }
+.pied p { max-width: 90ch; }
+
+@media (max-width: 960px) {
+  .hero .wrap, .travaux .wrap, .secteur .wrap, .contact .wrap { grid-template-columns: minmax(0, 1fr); }
+  .hero { padding: 32px 0 56px; }
+  .hero .hero-visuel { order: -1; }
+  .travaux, .secteur { padding: 72px 0; }
+  .travaux .cote { position: static; }
+  .entete nav a.lien { display: none; }
+}
+@media (max-width: 640px) {
+  body { font-size: 16px; }
+  .reassurance ul { grid-template-columns: minmax(0, 1fr); }
+  .reassurance li, .reassurance li + li { padding: 14px 0; border-left: 0; }
+  .reassurance li + li { border-top: 1px solid var(--border-color); }
+  .grille { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 44vw; }
+  .ph:first-child { grid-row: auto; }
+  .ph:last-child:nth-child(even) { grid-column: 1 / -1; }
+  .cadre::before, .cadre::after { width: 36px; height: 36px; }
+  .cadre::before { top: -8px; left: -8px; } .cadre::after { bottom: -8px; right: -8px; }
+  .entete .btn { padding: 0 16px; }
+}
+</style>
+</head>
+<body>
+<aside class="bandeau" aria-label="Maquette">Maquette privée préparée pour <strong>Brusca Bâtiment et Bois</strong> par Augustin Grivaud. Non publiée, non référencée, supprimée le 14 décembre 2026. <a href="../../offre/">Voir l’offre</a></aside>
+
+<header class="entete"><div class="wrap">
+  <a class="marque" href="#haut"><b>Brusca Bâtiment et Bois</b><span class="mono">Bâtiment et bois</span></a>
+  <nav aria-label="Principal">
+    <a class="lien" href="#travaux">Travaux</a>
+    <a class="lien" href="#realisations">Réalisations</a>
+    <a class="lien" href="#secteur">Secteur</a>
+    <a class="btn btn-plein" href="tel:+33327319854"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Appeler</a>
+  </nav>
+</div></header>
+
+<main id="haut">
+<section class="hero a-photo"><div class="wrap">
+  <div>
+    <span class="mono">Haveluy · 59</span>
+    <h1>Bâtiment et bois à Haveluy</h1>
+    <p class="lead">Brusca Bâtiment et Bois, au plus près de vos chantiers.</p>
+    <div class="actions">
+      <a class="btn btn-plein" href="tel:+33327319854">Appeler le 03 27 31 98 54</a>
+      <a class="btn btn-ligne" href="mailto:secretariat.brusca@gmail.com">Écrire</a>
+    </div>
+    <div class="badges"><span class="badge">Qualifié RGE</span></div>
+  </div>
+  <div class="hero-visuel cadre"><img class="hero-img" src="p/1.jpg" alt="Réalisation de Brusca Bâtiment et Bois" fetchpriority="high" decoding="async"><span class="pv mono">Votre plus belle photo de chantier ici</span></div>
+</div></section>
+
+<div class="reassurance" role="region" aria-label="En bref"><ul>
+  <li><span class="mono">Qualifications</span><strong>RGE · Qualibat</strong></li>
+  <li><span class="mono">Contact</span><strong>Appel direct</strong></li>
+  <li><span class="mono">Implantation</span><strong>Haveluy</strong></li>
+</ul></div>
+
+<section class="travaux a-photo" id="travaux"><div class="wrap">
+  <div>
+    <div class="entete-section"><h2>Nos travaux</h2><span class="mono">Prestations</span></div>
+    <ol class="liste"><li><span class="s">Isolation des murs par l’extérieur</span></li><li><span class="s">Isolation des murs, rampants et plafonds par l’intérieur</span></li><li><span class="s">Isolation des toitures terrasses et des toitures par l’extérieur</span></li><li><span class="s">Isolation des combles perdus et des planchers bas</span></li><li><span class="s">Fenêtres, fenêtres de toit, volets et portes extérieures</span></li></ol>
+  </div>
+  <div class="cote cadre"><img class="svc-img" src="p/2.jpg" alt="Réalisation de Brusca Bâtiment et Bois" decoding="async"></div>
+</div></section>
+
+<section class="realisations" id="realisations"><div class="wrap">
+  <div class="entete-section"><h2>Réalisations</h2><span class="mono">Chantiers</span></div>
+  <div class="grille"><figure class="ph"><img class="" src="p/3.jpg" alt="Réalisation de Brusca Bâtiment et Bois" decoding="async"></figure><figure class="ph"><img class="" src="p/4.jpg" alt="Réalisation de Brusca Bâtiment et Bois" decoding="async"></figure><figure class="ph ph-vide"><span>Vos photos de chantier ici</span></figure></div>
+</div></section>
+
+<section class="secteur" id="secteur"><div class="wrap">
+  <div>
+    <div class="entete-section"><h2>Secteur d’intervention</h2></div>
+    <ul class="communes"><li><span class="vide">[à compléter avec vous]</span></li></ul>
+  </div>
+  <div >
+    <div class="entete-section"><h2>Qualifications</h2></div>
+    <ul class="registre"><li><span class="q-nom">Qualibat 8621 · Les pros de la performance énergétique® (isolation et ouvrants)</span></li></ul>
+    <p class="note">Source : ADEME, liste des entreprises RGE (consultée le 27 novembre 2026).</p>
+  </div>
+</div></section>
+
+<section class="contact" id="contact"><div class="wrap">
+  <div>
+    <span class="mono" style="color: var(--on-dark-muted)">Un projet, un devis</span>
+    <h2>Parlons de votre chantier.</h2>
+    <a class="tel" href="tel:+33327319854">03 27 31 98 54</a>
+    <div class="actions"><a class="btn btn-plein" href="tel:+33327319854">Appeler</a><a class="btn btn-ligne" href="mailto:secretariat.brusca@gmail.com">Écrire un e-mail</a></div>
+  </div>
+  <dl>
+    <div><dt>E-mail</dt><dd><a href="mailto:secretariat.brusca@gmail.com">secretariat.brusca@gmail.com</a></dd></div>
+    <div><dt>Adresse</dt><dd>18 bis rue Ferrer, 59255 Haveluy</dd></div>
+    <div><dt>Horaires</dt><dd><ul class="horaires"><li>Du lundi au vendredi : 8 h 30 – 16 h 30</li><li>Samedi et dimanche : fermé</li></ul></dd></div>
+  </dl>
+</div></section>
+</main>
+
+<footer class="pied"><div class="wrap"><p>Photos : Brusca Bâtiment et Bois, photos publiées sur sa fiche Google. Maquette non contractuelle, préparée par Augustin Grivaud. Informations reprises de : votre fiche Google, votre page Facebook et la liste des entreprises RGE de l&#x27;ADEME (consultées le 27 novembre 2026).</p></div></footer>
+</body>
+</html>
